@@ -8,7 +8,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { HeaderComponent } from './layout/header/header.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +17,10 @@ import { HeaderComponent } from './layout/header/header.component';
     ProductItemComponent,
     CartComponent,
     ConfirmationComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
