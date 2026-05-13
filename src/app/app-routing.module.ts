@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     path: 'checkout',
     component: ConfirmationComponent,
   },
+  { path: 'product/:id', component: ProductItemComponent },
   {
     path: '**',
     redirectTo: '',
