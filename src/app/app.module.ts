@@ -11,6 +11,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     ConfirmationComponent,
     HeaderComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,12 +11,12 @@ import { ProductsService } from 'src/app/services/products/products.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  quantityOptions = [1, 2, 3, 4, 5, 7, 8, 9, 10];
+
   quantity: number = 1;
 
   constructor(
     private productService: ProductsService,
-    private router: Router,
+
     private cartService: CartService,
   ) {}
 
@@ -24,10 +24,6 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
     });
-  }
-
-  viewProduct(id: number) {
-    this.router.navigate(['/product', id]);
   }
 
   addItemToCart(product: Product) {
@@ -42,10 +38,8 @@ export class ProductListComponent implements OnInit {
     this.cartService.addToCart(cartItem);
   }
 
-  updateQuantity(id: number, event: Event): void {
-    this.quantity = +(event.target as HTMLSelectElement).value;
-    // const quantity = +(event.target as HTMLSelectElement).value;
-
-    this.cartService.updateQuantity(id, this.quantity);
+  updateQuantity(event: { id: number; quantity: number }): void {
+    this.quantity = event.quantity;
+    this.cartService.updateQuantity(event.id, this.quantity);
   }
 }

@@ -56,4 +56,15 @@ export class CartService {
 
     this.cart.next(updatedCart);
   }
+
+  removeFromCart(id: number): void {
+    const currentCart = this.cart.value;
+
+    const updatedItems = currentCart.items.filter((item) => item.id !== id);
+
+    this.cart.next({
+      ...currentCart,
+      items: updatedItems,
+    });
+  }
 }

@@ -25,6 +25,10 @@ export class CartComponent implements OnInit {
     return this.cartService.getTotal(items);
   }
 
+  removeItem(id: number): void {
+    this.cartService.removeFromCart(id);
+  }
+
   updateQuantity(id: number, quantity: number): void {
     this.cartService.updateQuantity(id, quantity);
   }

@@ -1,0 +1,30 @@
+<div class="container">
+  <div
+    class="card mb-4"
+    (click)="viewProduct(product.id)"
+    style="cursor: pointer"
+  >
+    <div class="product-image">
+      <img [src]="product.url" class="card-img-top" alt="{{ product.name }}" />
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+    </div>
+  </div>
+  <div class="d-flex align-items-center gap-2 mb-3">
+    <label>Amount:</label>
+
+    <select
+      class="form-select quantity-select"
+      (change)="onQuantityChange($event)"
+    >
+      <option *ngFor="let qty of quantityOptions" [value]="qty">
+        {{ qty }}
+      </option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <button class="btn btn-primary" (click)="onAddToCart()">Add to Cart</button>
+  </div>
+</div>
