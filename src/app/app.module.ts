@@ -10,6 +10,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ConfirmationComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

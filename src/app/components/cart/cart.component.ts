@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
 })
 export class CartComponent implements OnInit {
   cart$: Observable<Cart>;
+  quantityOptions = [1, 2, 3, 4, 5, 7, 8, 9, 10];
 
   constructor(private cartService: CartService) {
     this.cart$ = this.cartService.cart.asObservable();
@@ -22,5 +23,9 @@ export class CartComponent implements OnInit {
 
   getTotal(items: any[]): number {
     return this.cartService.getTotal(items);
+  }
+
+  updateQuantity(id: number, quantity: number): void {
+    this.cartService.updateQuantity(id, quantity);
   }
 }

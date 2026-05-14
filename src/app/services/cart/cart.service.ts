@@ -11,13 +11,12 @@ export class CartService {
   constructor() {}
 
   addToCart(item: CartItem): void {
-    //Spread Operator(...) -  copy all or part of an existing array or object into another array or object.
     const items = [...this.cart.value.items];
 
-    //Check if item is already in the cart. and if true update quantity
-    const ItemsInCart = items.find((_item) => _item.id === item.id);
-    if (ItemsInCart) {
-      ItemsInCart.quantity += 1;
+    const itemInCart = items.find((_item) => _item.id === item.id);
+
+    if (itemInCart) {
+      itemInCart.quantity += item.quantity;
     } else {
       items.push(item);
     }
@@ -34,5 +33,27 @@ export class CartService {
   clearCart(): void {
     this.cart.next({ items: [] });
     alert('Cart is cleared');
+  }
+
+  updateQuantity(id: number, quantity: number): void {
+    const currentCart = this.cart.value;
+
+    const updatedItems = currentCart.items.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: quantity,
+        };
+      }
+
+      return item;
+    });
+
+    const updatedCart = {
+      ...currentCart,
+      items: updatedItems,
+    };
+
+    this.cart.next(updatedCart);
   }
 }
