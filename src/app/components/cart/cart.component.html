@@ -1,1 +1,13 @@
-<p>cart works!</p>
+<div *ngIf="cart$ | async as cart" class="mt-5 p-4">
+  <div *ngFor="let item of cart.items" class="p-2 mb-3 bg-light rounded shadow">
+    <img [src]="item.url" class="cart-image" />
+    <h5>{{ item.name }}</h5>
+    <p>{{ item.quantity }} x {{ item.price | currency }}</p>
+  </div>
+
+  <hr />
+
+  <h3>Total: {{ getTotal(cart.items) | currency }}</h3>
+
+  <button class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
+</div>

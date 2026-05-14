@@ -18,8 +18,12 @@
           <p class="card-text">
             <strong>Price:</strong> {{ product.price | currency }}
           </p>
-          <button class="btn btn-primary">Add to Cart</button>
         </div>
+      </div>
+      <div class="mb-4">
+        <button class="btn btn-primary" (click)="addItemToCart(product)">
+          Add to Cart
+        </button>
       </div>
     </div>
   </div>

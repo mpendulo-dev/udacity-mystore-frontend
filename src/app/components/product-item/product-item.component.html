@@ -13,7 +13,12 @@
         {{ product.description }}
       </p>
 
-      <button class="btn btn-primary mt-3 w-100">Add to Cart</button>
+      <button
+        class="btn btn-primary mt-3 w-100"
+        (click)="addItemToCart(product)"
+      >
+        Add to Cart
+      </button>
 
       <button class="btn btn-outline-secondary mt-2 w-100" routerLink="/">
         Back to Products
