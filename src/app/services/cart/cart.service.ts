@@ -67,4 +67,7 @@ export class CartService {
       items: updatedItems,
     });
   }
+  getItems(): CartItem[] {
+    return this.cart.value.items;
+  }
 }
