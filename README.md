@@ -1,27 +1,54 @@
-# UdacityMystoreFrontend
+# Udacity Mystore Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+A simple and responsive e-commerce web application built with Angular (v16+).
+The project demonstrates core Angular concepts such as components, services, routing, template-driven forms, and reactive state management using BehaviorSubject.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Product listing page
+- Product details view
+- Add to cart functionality
+- Update cart quantity dynamically
+- Remove items from cart
+- Cart total calculation
+- Checkout form with validation
+- Success checkout page with order summary
+- Shared cart state using Angular services
+- Clean UI with Bootstrap styling
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+- Angular (v16+)
+- TypeScript
+- RxJS (BehaviorSubject)
+- Bootstrap 5
+- HTML / CSS
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## How to Run the Project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 1. Clone Repo
 
-## Running end-to-end tests
+`git clone https://github.com/mpendulo-dev/udacity-mystore-frontend.git`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 2. Navigate into the project
 
-## Further help
+`cd udacity-mystore-frontend`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 3. Install dependencies
+
+`npm install`
+
+### 4. Run the development server
+
+`ng serve`
+
+## How it works
+
+- Browse products on the product list page
+- Click a product to view details
+- Add items to cart
+- Adjust quantity in cart
+- Enter name and checkout
+- View success confirmation page
