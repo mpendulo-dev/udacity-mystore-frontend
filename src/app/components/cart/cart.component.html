@@ -92,15 +92,15 @@
         <label for="creditCard" class="form-label"> Credit Card Number </label>
 
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="creditCard"
           name="creditCard"
           [(ngModel)]="creditCard"
           #creditCardInput="ngModel"
           required
-          minlength="16"
-          maxlength="16"
+          min="1000000000000000"
+          max="9999999999999999"
           placeholder="(16-digit number)"
         />
 

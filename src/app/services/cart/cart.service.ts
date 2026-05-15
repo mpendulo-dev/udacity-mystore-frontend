@@ -66,6 +66,7 @@ export class CartService {
       ...currentCart,
       items: updatedItems,
     });
+    alert('Item removed from cart');
   }
   getItems(): CartItem[] {
     return this.cart.value.items;
